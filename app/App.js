@@ -74,7 +74,7 @@ export default class App extends React.Component {
         let balance = accounts.length > 0 ? await web3.eth.getBalance(accounts[0]): web3.utils.toWei('0');
         balance = web3.utils.fromWei(balance, 'ether');
         console.log("====== Success to load balance ======", balance)
-        
+
         let instance = null;  // This instance is contract of ContactNotebook
         let deployedNetwork = null;
         if (Widgets.networks) {
@@ -112,6 +112,18 @@ export default class App extends React.Component {
     }
   };
 
+  componentWillUnmount() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+
+  refreshValues = (instance) => {
+    if (instance) {
+      this.getWidgetsLength();
+    }
+  }
+
 
   /* Call getWidgetsLength function in contract of ContactNotebook */
   getWidgetsLength = async () => {
@@ -124,7 +136,6 @@ export default class App extends React.Component {
 
     console.log('response of getWidgetsLength', response)  // Debug
   };
-
 
 
   render () {
