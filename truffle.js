@@ -59,5 +59,17 @@ module.exports = {
       network_id: 4,
       provider: providerForNetwork('rinkeby')
     }
-  }
+  },
+  compilers: {
+    solc: {
+      version: "0.4.24",  
+      // docker: true,
+      // settings: {
+      //   optimizer: {
+      //     enabled: true, 
+      //     runs: 200    
+      //   }
+      // }
+    }
+  },
 }
