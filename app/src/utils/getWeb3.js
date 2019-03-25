@@ -1,6 +1,6 @@
 import Web3 from "web3";
-//const FALLBACK_WEB3_PROVIDER = process.env.REACT_APP_NETWORK || 'http://0.0.0.0:7545';   // Ganache-GUI
-const FALLBACK_WEB3_PROVIDER = process.env.REACT_APP_NETWORK || 'http://0.0.0.0:8545'; // Ganache-CLI
+const FALLBACK_WEB3_PROVIDER = process.env.REACT_APP_NETWORK || 'http://0.0.0.0:7545';   // Ganache-GUI
+//const FALLBACK_WEB3_PROVIDER = process.env.REACT_APP_NETWORK || 'http://0.0.0.0:8545'; // Ganache-CLI
 
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
@@ -9,6 +9,7 @@ const getWeb3 = () =>
       // Modern dapp browsers...
       if (window.ethereum) {
         const web3 = new Web3(window.ethereum);
+        console.log("====== Success to load web3 ======", web3)
         try {
           // Request account access if needed
           await window.ethereum.enable();
@@ -43,8 +44,8 @@ const getGanacheWeb3 = () => {
     return null;
   }
   const provider = new Web3.providers.HttpProvider(
-    //'http://0.0.0.0:7545'    // Ganache-GUI
-    'http://0.0.0.0:8545'  // Ganache-CLI
+    'http://0.0.0.0:7545'    // Ganache-GUI
+    //'http://0.0.0.0:8545'  // Ganache-CLI
   );
   const web3 = new Web3(provider);
   console.log("No local ganache found.");

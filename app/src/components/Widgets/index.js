@@ -9,9 +9,10 @@ export default class Widgets extends Component {
     const { widgets } = this.props;  // assign this.props
 
     return (
-      <Button
-        onClick={() => this.props.get_widgets_length()}
-        size="small">Get Index of Widgets</Button>
+      <div>
+      	<h3> Your ContactNotebook Contract Instance </h3>
+        { /* <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button> */ }
+	  </div>
     );
   }
 }
