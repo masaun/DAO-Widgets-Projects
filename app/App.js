@@ -132,7 +132,7 @@ export default class App extends React.Component {
     console.log('Widgetsの中身', Widgets)      // Debug（Don't use）
 
     const response = await Widgets.methods.getWidgetsLength().call();
-    this.setState({ numberOfContact: response })  // Update state with the result（and append into this.state）
+    this.setState({ widgetsLength: response })  // Update state with the result（and append into this.state）
 
     console.log('response of getWidgetsLength', response)  // Debug
   };

@@ -6,14 +6,19 @@ import styled from 'styled-components'
 export default class Widgets extends Component {
 
   render() {
-    const { widgets } = this.props;  // assign this.props
+    const { widgets, widgetsLength } = this.props;  // assign this.props
 
     return (
       <div>
       	<Card>
 	      	<h3> Your ContactNotebook Contract Instance </h3>
 
-	        <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button>
+	        <Button onClick={() => this.props.get_widgets_length()} size="small" mode="outline">Get Index of Widgets</Button>
+
+          <br />
+
+          {widgetsLength}
+
 	    </Card>
 	  </div>
     );
