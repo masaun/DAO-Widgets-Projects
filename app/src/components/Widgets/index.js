@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AragonApp, Button } from '@aragon/ui'
+import { AragonApp, Button, Card, Text } from '@aragon/ui'
 import Aragon, { providers } from '@aragon/client'
 import styled from 'styled-components'
 
@@ -10,8 +10,11 @@ export default class Widgets extends Component {
 
     return (
       <div>
-      	<h3> Your ContactNotebook Contract Instance </h3>
-        <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button>
+      	<Card>
+	      	<h3> Your ContactNotebook Contract Instance </h3>
+
+	        <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button>
+	    </Card>
 	  </div>
     );
   }
