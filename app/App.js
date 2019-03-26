@@ -125,6 +125,22 @@ export default class App extends React.Component {
   }
 
 
+  /* Create new Widget */
+  addWidget = async (address) => {
+    const { accounts } = this.state;
+
+    const response = await Widgets.methods.addWidget(address).send({ from: accounts[0] });
+
+    hoge = response.toString();
+    console.log('self.response of addWidget', response)  // Debug
+
+    this.setState({ widget: response });
+
+    console.log('response of addWidget', response)  // Debug
+  }
+
+
+
   /* Call getWidgetsLength function in contract of ContactNotebook */
   getWidgetsLength = async () => {
     const { Widgets } = this.state;    // assign this.state to variable which is empty（Don't use）
@@ -149,7 +165,9 @@ export default class App extends React.Component {
 
         <FormApp />
 
-        <Widgets get_widgets_length={this.getWidgetsLength} 
+        <Widgets 
+        get_widgets_length={this.getWidgetsLength}
+        add_widget={this.addWidget}
         {...this.state} />
 
         {/* <Widgets /> */}

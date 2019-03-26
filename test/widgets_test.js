@@ -22,17 +22,25 @@ contract('Widgets', (accounts) => {
 
 
 	it('Get result that is execute addWidget function by using methods option of web3.js', async () => {
-		const accounts = await web3.eth.getAccounts()
+      const MODIFIER_ROLE = web3.utils.sha3("MODIFIER_ROLE");
+      console.log('=== MODIFIER_ROLE ===', MODIFIER_ROLE);              // Result of execution： 0x62ca43aa15f7f495faa685ce5a258aa390fdc8d7094251dd23d32353f496ddfe
+      assert.equal(web3.utils.sha3("MODIFIER_ROLE"), MODIFIER_ROLE);
+
+      console.log('=== Success to pass about assert of MODIFIER_ROLE ===');
+
+		  const accounts = await web3.eth.getAccounts()
   		const contract = new web3.eth.Contract(Widgets.abi, Widgets.address);
   		const hoge = await contract.methods.addWidget(accounts[3]).send({ from: accounts[0] });
+      
+      //assert.equal(web3.utils.sha3("MODIFIER_ROLE"), MODIFIER_ROLE);
   		console.log('=== hoge ===', hoge);              // Result of execution： fall
   	})
 
 
   	it('Get result that is execute addWidget function by using deployed instance', async () => {
-		const accounts = await web3.eth.getAccounts()
-  		const hogehoge = Widgets.deployed().then((inst) => { return hogehoge = inst.addWidget(accounts[3]); })
+		  const accounts = await web3.eth.getAccounts();
+  		const hogehoge = Widgets.deployed().then((inst) => { return hogehoge = inst.addWidget(accounts[3]); });
   		//const hogehoge = Widgets.deployed().then((inst) => { console.log(inst.addWidget(accounts[3])); }); 
-  		console.log(hogehoge);  					   // Result of execution： Promise { <pending> }
+  		console.log('=== hogehoge ===', hogehoge);  					   // Result of execution： Promise { <pending> }
   	})
 })

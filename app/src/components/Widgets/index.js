@@ -15,6 +15,8 @@ export default class Widgets extends Component {
 
 	        <Button onClick={() => this.props.get_widgets_length()} size="small" mode="outline">Get Index of Widgets</Button>
 
+          <Button onClick={() => this.props.add_widget("0x0fED8b3f1024f6577E563c29CB8B8829EE2b87ef")} size="small" mode="outline">Get New Widget</Button>
+
           <br />
 
           {widgetsLength}
