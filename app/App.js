@@ -149,10 +149,10 @@ export default class App extends React.Component {
 
         <FormApp />
 
-        {/* <Widgets get_widgets_length={this.getWidgetsLength} 
-        {...this.state} /> */}
+        <Widgets get_widgets_length={this.getWidgetsLength} 
+        {...this.state} />
 
-        <Widgets />
+        {/* <Widgets /> */}
       </AppContainer>
     )
   }

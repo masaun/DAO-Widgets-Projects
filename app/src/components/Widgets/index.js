@@ -11,7 +11,7 @@ export default class Widgets extends Component {
     return (
       <div>
       	<h3> Your ContactNotebook Contract Instance </h3>
-        { /* <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button> */ }
+        <Button onClick={() => this.props.get_widgets_length()} size="small">Get Index of Widgets</Button>
 	  </div>
     );
   }
