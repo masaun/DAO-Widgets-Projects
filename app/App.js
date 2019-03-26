@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import getWeb3, { getGanacheWeb3 } from './src/utils/getWeb3'; // import web3 and ganache-cli
 
 import { FormApp } from './src/components/Form/FormApp.js';
-import { Widgets } from './src/components/Widgets/index.js';
+import Widgets from './src/components/Widgets/index.js';
 
 
 const AppContainer = styled(AragonApp)`
@@ -152,7 +152,7 @@ export default class App extends React.Component {
         {/* <Widgets get_widgets_length={this.getWidgetsLength} 
         {...this.state} /> */}
 
-        {/*  <Widgets /> */}
+        <Widgets />
       </AppContainer>
     )
   }
