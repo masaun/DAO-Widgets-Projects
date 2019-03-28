@@ -21,7 +21,6 @@ contract Widgets is AragonApp {
     /// State
     Widget[] public widgets;
 
-
     /// ACL
     bytes32 constant public MODIFIER_ROLE = keccak256("MODIFIER_ROLE");
 

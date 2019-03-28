@@ -3,6 +3,7 @@ import { AragonApp, Button, Card, Text } from '@aragon/ui'
 import Aragon, { providers } from '@aragon/client'
 import styled from 'styled-components'
 
+
 export default class Widgets extends Component {
 
   render() {
